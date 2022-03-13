@@ -1,5 +1,6 @@
 import { GetStaticProps, GetStaticPropsContext } from "next"
 import * as React from "react"
+import Link from "next/link"
 
 export interface PostListPageProps {
   posts: any[]
@@ -11,7 +12,11 @@ export default function PostListPage({ posts }: PostListPageProps) {
       <h1>Post List Page</h1>
       <ul>
         {posts.map((post) => (
-          <li key={post.id}>{post.title}</li>
+          <li key={post.id}>
+            <Link href={`posts/${post.id}`} passHref>
+              <a>{post.title}</a>
+            </Link>
+          </li>
         ))}
       </ul>
     </div>
@@ -27,8 +32,6 @@ export const getStaticProps: GetStaticProps<PostListPageProps> = async (
   // cannot use with getServerSideProps
   const response = await fetch("https://5e6cf4f84e86f8001618c854.mockapi.io/post?page=1&limit=10")
   const data = await response.json()
-
-  console.log(data)
 
   return {
     props: {
