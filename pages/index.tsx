@@ -28,8 +28,8 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
 
         <Script
-          id="hotjar"
-          strategy="afterInteractive"
+          id='hotjar'
+          strategy='beforeInteractive'
           dangerouslySetInnerHTML={{
             __html: `
             (function(h,o,t,j,a,r){
