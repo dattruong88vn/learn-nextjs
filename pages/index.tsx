@@ -37,6 +37,10 @@ const Home: NextPage = () => {
                 r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
                 a.appendChild(r);
             })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+
+            var num = Math.round(Math.random() * 10);
+            var eve = num % 2 === 0 ? "propzy_condo_detail_simple" : "propzy_condo_detail";
+            hj('event', eve);
           `,
           }}
         ></script>
