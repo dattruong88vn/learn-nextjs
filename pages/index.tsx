@@ -1,11 +1,12 @@
-import type { NextPage } from "next"
+import { MainLayout } from "@/components/layout"
 import { useRouter } from "next/dist/client/router"
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
+import { NextPageWithLayout } from "models"
 import styles from "../styles/Home.module.css"
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   const router = useRouter()
 
   const goToDetailPage = () => {
@@ -82,5 +83,7 @@ const Home: NextPage = () => {
     </div>
   )
 }
+
+Home.Layout = MainLayout
 
 export default Home

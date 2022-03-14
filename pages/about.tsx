@@ -2,6 +2,7 @@ import dynamic from "next/dynamic"
 import { useRouter } from "next/dist/client/router"
 import React, { useEffect, useState } from "react"
 import Header from "@/components/common/header"
+import { MainLayout } from "@/components/layout"
 
 // const Header = dynamic(() => import("@/components/common/header"), { ssr: false })
 
@@ -55,9 +56,11 @@ export default function About(props: AboutProps) {
   )
 }
 
-export async function getStaticProps() {
-  console.log("get static props")
-  return {
-    props: {},
-  }
-}
+About.Layout = MainLayout
+
+// export async function getStaticProps() {
+//   console.log("get static props")
+//   return {
+//     props: {},
+//   }
+// }
