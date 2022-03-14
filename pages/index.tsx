@@ -38,6 +38,7 @@ const Home: NextPage = () => {
                 a.appendChild(r);
             })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 
+            window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)};
             hj('event', "propzy_condo_detail_simple");
           `,
           }}
