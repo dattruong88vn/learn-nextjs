@@ -17,7 +17,8 @@
     "paths": {
       "@/components/*": ["./components/*"],
       "@/constants/*": ["./constants/*"],
-      "@/models/*": ["./models/*"]
+      "@/models/*": ["./models/*"],
+      "@/api/*": ["./api-client/*"],
     },
     "incremental": true
   },
