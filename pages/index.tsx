@@ -30,17 +30,17 @@ const Home: NextPageWithLayout = () => {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-            (function(h,o,t,j,a,r){
-                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-                h._hjSettings={hjid:2873806,hjsv:6};
-                a=o.getElementsByTagName('head')[0];
-                r=o.createElement('script');r.async=1;
-                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-                a.appendChild(r);
-            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-
-            window.hj=window.hj||function(){(hj.q=hj.q||[]).push(arguments)};
-            hj('event', "propzy_condo_detail_simple");
+            <!-- Hotjar Tracking Code for https://learn-nextjs-a0m1vulfk-dattruong88vn.vercel.app -->
+            <script>
+                (function(h,o,t,j,a,r){
+                    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                    h._hjSettings={hjid:2877902,hjsv:6};
+                    a=o.getElementsByTagName('head')[0];
+                    r=o.createElement('script');r.async=1;
+                    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                    a.appendChild(r);
+                })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+            </script>
           `,
           }}
         ></script>
