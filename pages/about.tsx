@@ -51,11 +51,11 @@ export default function About(props: AboutProps) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-            <!-- Hotjar Tracking Code for https://learn-nextjs-a0m1vulfk-dattruong88vn.vercel.app -->
+            <!-- Hotjar Tracking Code for https://learn-nextjs-seven-kappa.vercel.app/ -->
             <script>
                 (function(h,o,t,j,a,r){
                     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-                    h._hjSettings={hjid:2877902,hjsv:6};
+                    h._hjSettings={hjid:2878045,hjsv:6};
                     a=o.getElementsByTagName('head')[0];
                     r=o.createElement('script');r.async=1;
                     r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
