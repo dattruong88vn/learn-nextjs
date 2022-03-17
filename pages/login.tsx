@@ -1,31 +1,36 @@
 import React from "react"
 import { authApi } from "api-client"
+import { useAuth } from "hooks"
 
 type LoginPageProps = {}
 
-export default function LoginPage({}: LoginPageProps) {
-  async function hanldeLogin() {
+export default function LoginPage({ }: LoginPageProps) {
+  console.warn("Render {Login}")
+  const { login, logout, profile } = useAuth({
+    revalidateOnMount: false
+  })
+
+  async function handleLogin() {
     try {
-      await authApi.login({
-        username: "thanhdat",
-        password: "123456",
-      })
+      await login();
+      console.log("redirect to dashboard");
     } catch (err) {
       console.log("failed to login", err)
     }
   }
 
-  async function hanldeGetProfile() {
-    try {
-      await authApi.getProfile()
-    } catch (err) {
-      console.log("failed to getprofile", err)
-    }
-  }
+  // async function hanldeGetProfile() {
+  //   try {
+  //     await authApi.getProfile()
+  //   } catch (err) {
+  //     console.log("failed to getprofile", err)
+  //   }
+  // }
 
-  async function hanldeLogout() {
+  async function handleLogout() {
     try {
-      await authApi.logout()
+      await logout();
+      console.log("Redirect to page login")
     } catch (err) {
       console.log("failed to logout", err)
     }
@@ -35,9 +40,11 @@ export default function LoginPage({}: LoginPageProps) {
     <div>
       <h1>Login Page</h1>
 
-      <button onClick={hanldeLogin}>Login</button>
-      <button onClick={hanldeGetProfile}>Get Profile</button>
-      <button onClick={hanldeLogout}>Logout</button>
+      <div>Profile: {JSON.stringify(profile)}</div>
+
+      <button onClick={handleLogin}>Login</button>
+      {/* <button onClick={hanldeGetProfile}>Get Profile</button> */}
+      <button onClick={handleLogout}>Logout</button>
     </div>
   )
 }
