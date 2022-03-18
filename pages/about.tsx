@@ -3,7 +3,7 @@ import { useRouter } from "next/dist/client/router"
 import React, { useEffect, useState } from "react"
 import Head from "next/head"
 import Header from "@/components/common/header"
-import { MainLayout } from "@/components/layout"
+import { AdminLayout } from "@/components/layout"
 
 // const Header = dynamic(() => import("@/components/common/header"), { ssr: false })
 
@@ -78,5 +78,5 @@ export default function About(props: AboutProps) {
   )
 }
 
-About.Layout = MainLayout
+About.Layout = AdminLayout
 
