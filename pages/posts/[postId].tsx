@@ -58,8 +58,6 @@ export const getStaticProps: GetStaticProps<PostDetailPageProps> = async (
   const response = await fetch(`https://5e6cf4f84e86f8001618c854.mockapi.io//post/${postId}`)
   const data = await response.json()
 
-  console.log(data)
-
   return {
     props: {
       post: data,

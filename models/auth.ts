@@ -5,4 +5,6 @@ export interface LoginPayload {
 
 export interface ProfileResponse {
   username: string
+  city: string
+  email: string
 }

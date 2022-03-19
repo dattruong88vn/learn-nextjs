@@ -17,7 +17,6 @@ export const useAuth = (options?: SWRConfiguration) => {
   const firstLoading = profile === undefined && error === undefined
 
   async function login() {
-    console.log(123)
     await authApi.login({
       username: "thanhdat",
       password: "123456",

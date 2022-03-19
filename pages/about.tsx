@@ -7,7 +7,6 @@ import { Box, Typography } from "@mui/material"
 export interface AboutProps {}
 export default function About(props: AboutProps) {
   const router = useRouter()
-  console.log("about query: ", router.query)
 
   const [postList, setPostList] = useState<any[]>([])
 
