@@ -1,4 +1,4 @@
-import axiosClient from "@/api/axiosClient"
+import { axiosClient } from "@/api/axiosClient"
 import { EmptyLayout } from "@/components/layout"
 import { CacheProvider } from "@emotion/react"
 import CssBaseline from "@mui/material/CssBaseline"

@@ -1,26 +1,25 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import { authApi } from "api-client"
 import { useAuth } from "hooks"
 import { useRouter } from "next/dist/client/router"
 
 type LoginPageProps = {}
 
-export default function LoginPage({ }: LoginPageProps) {
+export default function LoginPage({}: LoginPageProps) {
   console.warn("Render {Login}")
-  const router = useRouter();
+  const router = useRouter()
 
   const { login, logout, profile } = useAuth({
-    revalidateOnMount: false
+    revalidateOnMount: false,
   })
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false)
 
   async function handleLogin() {
     try {
-      setLoading(true);
-      await login();
-      console.log("redirect to dashboard");
-      router.push("/about");
+      setLoading(true)
+      await login()
+      router.push("/about")
     } catch (err) {
       console.log("failed to login", err)
     } finally {
@@ -30,7 +29,7 @@ export default function LoginPage({ }: LoginPageProps) {
 
   async function handleLogout() {
     try {
-      await logout();
+      await logout()
       console.log("Redirect to page login")
     } catch (err) {
       console.log("failed to logout", err)

@@ -1,14 +1,13 @@
-import useSWR from "swr"
+import useSWR, { SWRConfiguration } from "swr"
 import { authApi } from "api-client"
-import { PublicConfiguration } from "swr/dist/types"
+import { ProfileResponse } from "models"
 
-export const useAuth = (options?: Partial<PublicConfiguration>) => {
-  
+export const useAuth = (options?: SWRConfiguration) => {
   const {
     data: profile,
     error,
     mutate,
-  } = useSWR("/profile", {
+  } = useSWR<ProfileResponse | null>("/profile", {
     revalidateOnFocus: false,
     dedupingInterval: 60 * 60 * 1000,
     ...options,
@@ -18,6 +17,7 @@ export const useAuth = (options?: Partial<PublicConfiguration>) => {
   const firstLoading = profile === undefined && error === undefined
 
   async function login() {
+    console.log(123)
     await authApi.login({
       username: "thanhdat",
       password: "123456",
@@ -29,7 +29,7 @@ export const useAuth = (options?: Partial<PublicConfiguration>) => {
   async function logout() {
     await authApi.logout()
     // avoid mutate with value data undefined --> swr wil get previous data
-    await mutate({}, false)
+    await mutate(null, false)
   }
 
   return {
