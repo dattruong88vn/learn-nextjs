@@ -19,6 +19,7 @@
       "@/constants/*": ["./constants/*"],
       "@/models/*": ["./models/*"],
       "@/api/*": ["./api-client/*"],
+      "@/utils/*": ["./utils/*"]
     },
     "incremental": true
   },
