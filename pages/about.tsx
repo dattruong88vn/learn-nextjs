@@ -1,8 +1,7 @@
 import { useRouter } from "next/dist/client/router"
 import React, { useEffect, useState } from "react"
-import Header from "@/components/common/header"
 import { AdminLayout } from "@/components/layout"
-import { Box, Typography } from "@mui/material"
+import { Box, Typography, Button } from "@mui/material"
 
 export interface AboutProps {}
 export default function About(props: AboutProps) {
@@ -37,12 +36,16 @@ export default function About(props: AboutProps) {
   }
 
   return (
-    <Box>
+    <Box sx={{ p: 2 }}>
       <Typography component='h1' variant='h3' color='primary.main'>
         About page
       </Typography>
+
+      <Button color='success' variant='contained'>
+        Button
+      </Button>
+
       <main>
-        <Header />
         <ul>
           {postList.map((post) => (
             <li key={post.id}>{post.title}</li>
